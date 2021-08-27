@@ -1,0 +1,27 @@
+@import "/src/pallete";
+.componentItemLink {
+  display: block;
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  background: $white;
+  border: 1px solid $grayLight;
+  border-radius: 5px;
+  text-decoration: none;
+  color: $black;
+  transition: background 500ms 100ms;
+  &:hover {
+    background: $grayLight;
+  }
+}
+
+.componentItemInner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9em;
+  gap: 10px;
+}

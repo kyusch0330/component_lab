@@ -1,0 +1,35 @@
+@import "/src/pallete.scss";
+$length: 3;
+.sliderContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sliderView {
+  max-width: 450px;
+  height: 300px;
+  overflow: hidden;
+}
+.slider {
+  width: 100% * $length;
+  height: 100%;
+  display: flex;
+  // justify-content: flex-start;
+  // align-items: center;
+  border: 1px solid $gray;
+}
+
+.slideCard {
+  flex: 1;
+  &.red {
+    background: $red;
+  }
+  &.green {
+    background: $green;
+  }
+  &.blue {
+    background: $blue;
+  }
+}

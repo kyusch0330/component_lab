@@ -1,0 +1,15 @@
+@import "/src/pallete.scss";
+div.mainContainer {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-flow: row-reverse;
+}
+
+div.displayContainer {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  background: $white;
+}

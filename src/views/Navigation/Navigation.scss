@@ -1,0 +1,44 @@
+@import "/src/pallete.scss";
+.navigationContainer {
+  display: flex;
+  align-items: center;
+
+  transition: all 500ms;
+
+  .navToggleButton {
+    width: 50px;
+    height: 100px;
+    background: $white;
+    border: 1px solid $gray;
+    border-right: none;
+    border-radius: 15px 0 0 15px;
+    color: $gray;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .componentList {
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    background: $white;
+    border-left: 1px solid $grayLight;
+  }
+
+  &.closed {
+    display: fixed;
+    top: 0;
+    right: 0;
+    transform: translateX(130px);
+
+    .navToggleButton {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
