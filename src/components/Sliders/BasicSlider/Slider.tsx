@@ -10,6 +10,7 @@ const Slider = () => {
   const [current, setCurrent] = useState(0);
   const currentSlide = useRef<null | HTMLDivElement>(null);
   const [paused, setPaused] = useState(false);
+  const cardWidth = document.querySelector(".slideCard")?.clientWidth; //슬라이드 한 장의 width
 
   useEffect(() => {
     if (paused) return;
@@ -27,7 +28,9 @@ const Slider = () => {
         <div
           className="slider"
           style={{
-            transform: `translateX(${current * -450}px)`,
+            transform: `translateX(${
+              -1 * current * (cardWidth ? cardWidth : 1)
+            }px)`,
             width: `${100 * colors.length}%`,
           }}
         >
