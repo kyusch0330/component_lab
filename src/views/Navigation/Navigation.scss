@@ -2,7 +2,7 @@
 .navigationContainer {
   display: flex;
   align-items: center;
-
+  z-index: 999;
   transition: all 500ms;
 
   .navToggleButton {

@@ -12,8 +12,8 @@ const Routes = () => {
         <Navigation />
         <div className="displayContainer">
           <Switch>
-            <Route exact path="/slider" component={SliderPage} />
-            <Route exact path="/drag-and-drop" component={DragAndDrop} />
+            <Route path="/slider" component={SliderPage} />
+            <Route path="/drag-and-drop" component={DragAndDrop} />
           </Switch>
         </div>
       </div>

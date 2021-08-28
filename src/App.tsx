@@ -3,7 +3,7 @@ import Routes from "./Router/Routes";
 import "./App.scss";
 const App = () => {
   return (
-    <div>
+    <div className="appContainer">
       <Routes />
     </div>
   );
