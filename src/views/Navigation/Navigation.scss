@@ -2,19 +2,27 @@
 .navigationContainer {
   display: flex;
   align-items: center;
-  z-index: 999;
+  z-index: 1001;
   transition: all 500ms;
-
+  position: fixed;
+  top: 0;
+  right: 0;
   .navToggleButton {
     width: 50px;
     height: 100px;
     background: $white;
     border: 1px solid $gray;
     border-right: none;
-    border-radius: 15px 0 0 15px;
+    border-radius: 5px 0 0 5px;
     color: $gray;
     &:hover {
       cursor: pointer;
+    }
+    @media (max-width: 500px) {
+      width: 40px;
+      height: 75px;
+      align-self: flex-start;
+      margin-top: 5px;
     }
   }
 
@@ -30,9 +38,6 @@
   }
 
   &.closed {
-    display: fixed;
-    top: 0;
-    right: 0;
     transform: translateX(130px);
 
     .navToggleButton {

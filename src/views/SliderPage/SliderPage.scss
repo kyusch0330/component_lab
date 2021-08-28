@@ -7,15 +7,36 @@
 .sliderMenuContainer {
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+
+  transition: all 500ms ease-out;
+  z-index: 999;
+  .toggleMenuBtn {
+    width: 100px;
+    height: 40px;
+    border: 1px solid $grayLight;
+    border-radius: 0 0 5px 5px;
+    background: $white;
+    svg {
+      transform: rotate(270deg);
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
   .sliderMenu {
-    position: fixed;
-    top: 0;
     border: 1px solid $gray;
     border-radius: 0 0 5px 5px;
     display: flex;
     gap: 10px;
     padding: 20px;
+    background: $white;
+    height: 100px;
+    z-index: 1000;
     .menu {
       display: flex;
       justify-content: center;
@@ -30,6 +51,15 @@
 
       &.selected {
         background: $grayLight;
+      }
+    }
+  }
+
+  &.closed {
+    top: -100px;
+    .toggleMenuBtn {
+      svg {
+        transform: rotate(90deg);
       }
     }
   }
