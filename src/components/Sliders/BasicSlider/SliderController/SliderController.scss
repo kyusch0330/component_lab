@@ -1,0 +1,75 @@
+@import "/src/pallete.scss";
+.sliderController {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.playPauseBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  background: none;
+  border: none;
+  svg {
+    fill: $whiteTrans;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.moveToPrevBtn {
+  position: absolute;
+  left: 0;
+  top: 45%;
+  background: none;
+  border: none;
+  svg {
+    fill: $whiteTrans;
+    transform: rotate(180deg);
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+.moveToNextBtn {
+  position: absolute;
+  right: 0;
+  top: 45%;
+  background: none;
+  border: none;
+  svg {
+    fill: $whiteTrans;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.moveBtnContainer {
+  position: absolute;
+  bottom: 0;
+  margin: 10px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+
+  .moveBtn {
+    border: none;
+    background: $whiteTrans;
+    padding: 5px;
+    border-radius: 50%;
+    &:hover {
+      cursor: pointer;
+    }
+    &.current {
+      background: $white;
+    }
+  }
+}

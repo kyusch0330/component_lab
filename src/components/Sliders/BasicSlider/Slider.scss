@@ -1,5 +1,5 @@
 @import "/src/pallete.scss";
-$length: 3;
+// $length: 3;
 .sliderContainer {
   width: 100%;
   height: 100%;
@@ -8,17 +8,17 @@ $length: 3;
   align-items: center;
 }
 .sliderView {
+  position: relative;
   max-width: 450px;
   height: 300px;
   overflow: hidden;
 }
 .slider {
-  width: 100% * $length;
+  // width: 100% * $length; //js로 정의
   height: 100%;
   display: flex;
-  // justify-content: flex-start;
-  // align-items: center;
   border: 1px solid $gray;
+  transition: all 500ms ease-in-out;
 }
 
 .slideCard {
@@ -26,10 +26,16 @@ $length: 3;
   &.red {
     background: $red;
   }
+  &.orange {
+    background: $orange;
+  }
   &.green {
     background: $green;
   }
   &.blue {
     background: $blue;
+  }
+  &.purple {
+    background: $purple;
   }
 }
