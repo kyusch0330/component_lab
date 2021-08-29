@@ -1,6 +1,6 @@
-@import "/src/pallete.scss";
+@import "/src/constants/Pallete.scss";
+@import "/src/constants/Width.scss";
 // $length: 3;
-$cardWidth: 450px;
 .sliderContainer {
   width: 100%;
   height: 100%;
@@ -10,8 +10,7 @@ $cardWidth: 450px;
 
   .sliderView {
     position: relative;
-    width: 90%;
-    max-width: 450px;
+    width: 450px;
     height: 300px;
     overflow: hidden;
   }
@@ -39,6 +38,15 @@ $cardWidth: 450px;
     }
     &.purple {
       background: $purple;
+    }
+  }
+
+  @media (max-width: $MOBILE) {
+    .sliderView {
+      position: relative;
+      width: 250px;
+      height: 200px;
+      overflow: hidden;
     }
   }
 }
