@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { HashRouter as Router, Link, Route, Switch } from "react-router-dom";
 import Slider from "components/Sliders/BasicSlider/Slider";
 import VerticalSlider from "components/Sliders/VerticalSlider/VerticalSlider";
+import CircularSlider from "components/Sliders/CircularSlider/CircularSlider";
 import { ReactComponent as ArrowImg } from "assets/right-arrow.svg";
 import "./SliderPage.scss";
 const SliderPage = () => {
@@ -10,8 +11,9 @@ const SliderPage = () => {
   const paths = [
     ["basic slider", "/slider"],
     ["vertical slider", "/slider/vertical"],
+    ["circular slider", "/slider/circular"],
   ];
-  const components = [Slider, VerticalSlider];
+  const components = [Slider, VerticalSlider, CircularSlider];
   return (
     <div className="sliderPageContainer">
       <div className={`sliderMenuContainer ${!display && "closed"}`}>

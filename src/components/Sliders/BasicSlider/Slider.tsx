@@ -8,7 +8,6 @@ import SliderController from "./SliderController/SliderController";
 const Slider = () => {
   const colors = ["red", "orange", "green", "blue", "purple"];
   const [current, setCurrent] = useState(0);
-  const currentSlide = useRef<null | HTMLDivElement>(null);
   const [paused, setPaused] = useState(false);
   const cardWidth = document.querySelector(".slideCard")?.clientWidth; //슬라이드 한 장의 width
   console.log(cardWidth);
@@ -36,10 +35,7 @@ const Slider = () => {
           }}
         >
           {colors.map((color, index) => (
-            <div
-              ref={current === index ? currentSlide : null}
-              className={`slideCard ${color}`}
-            />
+            <div className={`slideCard ${color}`} />
           ))}
         </div>
         <SliderController

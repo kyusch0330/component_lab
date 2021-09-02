@@ -2,10 +2,10 @@ import React from "react";
 import { useRef } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import "./VerticalSlider.scss";
-import SliderController from "./VerticalSliderController/VerticalSliderController";
+import "./CircularSlider.scss";
+import SliderController from "./CircularSliderController/CircularSliderController";
 
-const Slider = () => {
+const CircularSlider = () => {
   const colors = ["red", "orange", "green", "blue", "purple"];
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
@@ -21,17 +21,22 @@ const Slider = () => {
   }, [paused]);
 
   return (
-    <div className="vertical_sliderContainer">
+    <div className="circular_sliderContainer">
       <div className="sliderView">
-        <div
-          className="slider"
-          style={{
-            transform: `translateY(${current * -300}px)`,
-            height: `${100 * colors.length}%`,
-          }}
-        >
+        <div className="slider">
           {colors.map((color, index) => (
-            <div className={`slideCard ${color}`} />
+            <div
+              className={`slideCard ${color}`}
+              style={{
+                zIndex:
+                  colors.length +
+                  (index > current ? -1 * index : index - current),
+                top:
+                  index > current
+                    ? 20 + 20 * (index - current) + "px"
+                    : 20 + -20 * (index - current) + "px",
+              }}
+            />
           ))}
         </div>
         <SliderController
@@ -46,4 +51,4 @@ const Slider = () => {
   );
 };
 
-export default Slider;
+export default CircularSlider;

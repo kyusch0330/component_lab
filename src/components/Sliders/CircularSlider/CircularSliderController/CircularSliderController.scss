@@ -1,0 +1,79 @@
+@import "/src/constants/Pallete.scss";
+.circular_sliderController {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+
+  .playPauseBtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    background: none;
+    border: none;
+    z-index: 2;
+    svg {
+      fill: $whiteTrans;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .moveToPrevBtn {
+    position: absolute;
+    right: 45%;
+    top: 0;
+    background: none;
+    border: none;
+    svg {
+      fill: $whiteTrans;
+      transform: rotate(270deg);
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .moveToNextBtn {
+    position: absolute;
+    right: 45%;
+    bottom: 0;
+    background: none;
+    border: none;
+    svg {
+      fill: $whiteTrans;
+      transform: rotate(90deg);
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .moveBtnContainer {
+    position: absolute;
+    right: 0;
+    margin: 0 10px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+
+    .moveBtn {
+      border: none;
+      background: $whiteTrans;
+      padding: 5px;
+      border-radius: 50%;
+      &:hover {
+        cursor: pointer;
+      }
+      &.current {
+        background: $white;
+      }
+    }
+  }
+}
