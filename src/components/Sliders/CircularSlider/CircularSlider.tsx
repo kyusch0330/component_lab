@@ -44,9 +44,9 @@ const CircularSlider = () => {
                 style={{
                   zIndex: len - diff,
                   top: isBigger
-                    ? `${60 + 30 * diff}px`
-                    : `${60 + -30 * diff}px`,
-                  width: `${100 - diff * 10}%`,
+                    ? `${60 + 25 * diff}px`
+                    : `${60 + -25 * diff}px`,
+                  width: `${90 - diff * 10}%`,
                 }}
               />
             );

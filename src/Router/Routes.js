@@ -1,7 +1,7 @@
 import React from "react";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import SliderPage from "views/SliderPage/SliderPage";
-import DragAndDrop from "../components/DragAndDrops/DragAndDrop";
+import DragAndDropPage from "views/DragAndDropPage/DragAndDropPage";
 import Navigation from "../views/Navigation/Navigation";
 import "./Routes.scss";
 
@@ -13,7 +13,7 @@ const Routes = () => {
         <div className="displayContainer">
           <Switch>
             <Route path="/slider" component={SliderPage} />
-            <Route path="/drag-and-drop" component={DragAndDrop} />
+            <Route path="/drag-and-drop" component={DragAndDropPage} />
           </Switch>
         </div>
       </div>

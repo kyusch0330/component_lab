@@ -5,6 +5,7 @@ import VerticalSlider from "components/Sliders/VerticalSlider/VerticalSlider";
 import CircularSlider from "components/Sliders/CircularSlider/CircularSlider";
 import { ReactComponent as ArrowImg } from "assets/right-arrow.svg";
 import "./SliderPage.scss";
+import PageMenu from "views/PageMenu/PageMenu";
 const SliderPage = () => {
   const [display, setDisplay] = useState(true);
   const [current, setCurrent] = useState(0);
@@ -16,26 +17,14 @@ const SliderPage = () => {
   const components = [Slider, VerticalSlider, CircularSlider];
   return (
     <div className="sliderPageContainer">
-      <div className={`sliderMenuContainer ${!display && "closed"}`}>
-        <div className="sliderMenu">
-          {paths.map((path, pIndex) => (
-            <Link
-              key={pIndex}
-              onClick={() => setCurrent(pIndex)}
-              className={`menu ${current === pIndex && "selected"}`}
-              to={path[1]}
-            >
-              {path[0]}
-            </Link>
-          ))}
-        </div>
-        <button
-          className="toggleMenuBtn"
-          onClick={() => setDisplay((display) => !display)}
-        >
-          <ArrowImg width={20} height={20} />
-        </button>
-      </div>
+      <PageMenu
+        display={display}
+        setDisplay={setDisplay}
+        paths={paths}
+        current={current}
+        setCurrent={setCurrent}
+      />
+
       {paths.map((path, pIndex) => (
         <Route exact path={path[1]} component={components[pIndex]} />
       ))}
