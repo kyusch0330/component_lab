@@ -3,35 +3,52 @@
   width: 100%;
   height: 100%;
   display: flex;
+  flex-flow: row wrap;
+  align-content: center;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 0.3em;
+  position: relative;
 
-  .box {
-    width: 5rem;
-    height: 5rem;
+  .boxContainer {
+    width: 7rem;
+    height: 7rem;
+    position: relative;
+
+    border: 1px solid $grayLight;
+    border-radius: 5px;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid $grayLight;
-    border-radius: 5px;
-    position: relative;
 
-    .grabArea {
-      cursor: grab;
-      position: absolute;
-      top: 0.1rem;
-      left: 0.1rem;
-      &:active {
-        cursor: grabbing;
+    .box {
+      width: 5em;
+      height: 5em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid $grayLight;
+      border-radius: 5px;
+      background: $whiteTrans;
+      .grabArea {
+        cursor: grab;
+        position: absolute;
+        top: 0.1rem;
+        left: 0.1rem;
+        svg {
+          width: 0.8em;
+          height: 0.8em;
+          fill: $blackTrans;
+        }
       }
-    }
 
-    .numInfo {
-      text-align: center;
-      width: 50%;
-      height: 50%;
-      padding: 5px;
+      .numInfo {
+        text-align: center;
+        width: 50%;
+        height: 50%;
+        padding: 5px;
+      }
     }
   }
 }
