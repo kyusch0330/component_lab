@@ -8,7 +8,7 @@ import "./Routes.scss";
 const Routes = () => {
   return (
     <Router>
-      <div className="mainContainer">
+      <div className="mainContainer" style={{ height: window.innerHeight }}>
         <Navigation />
         <div className="displayContainer">
           <Switch>

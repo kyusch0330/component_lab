@@ -81,6 +81,7 @@ const DragAndDrop = () => {
       </div> */}
       {infos.map((info, index) => (
         <div
+          key={info.num}
           className="boxContainer"
           style={{ order: info.order }}
           // onMouseEnter={() => {
