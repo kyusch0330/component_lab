@@ -21,6 +21,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background: $grayTrans;
 
     .box {
       width: 5em;
@@ -31,7 +32,7 @@
       border: 1px solid $grayLight;
       border-radius: 5px;
       background: $whiteTrans;
-      .grabArea {
+      .box_grabArea {
         cursor: grab;
         position: absolute;
         top: 0.1rem;
@@ -43,7 +44,7 @@
         }
       }
 
-      .numInfo {
+      .box_numInfo {
         text-align: center;
         width: 50%;
         height: 50%;
