@@ -64,34 +64,11 @@ const DragAndDrop = () => {
         setCurrentPos({ y: e.touches[0].clientY, x: e.touches[0].clientX });
       }}
     >
-      {/* <div
-        style={{
-          padding: "5px",
-          background: "red",
-          position: "fixed",
-          top: currentPos.y,
-          left: currentPos.x,
-          zIndex: 2000,
-        }}
-      >
-        {target}
-      </div> */}
-      {/* <div style={{ position: "fixed", top: "10px", left: "10px" }}>
-        {target}
-      </div> */}
       {infos.map((info, index) => (
         <div
           key={info.num}
           className="boxContainer"
           style={{ order: info.order }}
-          // onMouseEnter={() => {
-          //   if (!dragging) return;
-          //   setTarget(info.num);
-          // }}
-          // onMouseLeave={() => {
-          //   if (!dragging) return;
-          //   setTarget(-1);
-          // }}
           onMouseEnter={(e) => {
             if (!dragging) return;
             changeElements(selected, info.num);

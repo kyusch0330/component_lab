@@ -8,8 +8,8 @@
   top: 0;
   right: 0;
   .navToggleButton {
-    width: 50px;
-    height: 100px;
+    width: 3em;
+    height: 7em;
     background: $white;
     border: 1px solid $gray;
     border-right: none;
@@ -19,8 +19,8 @@
       cursor: pointer;
     }
     @media (max-width: 500px) {
-      width: 40px;
-      height: 75px;
+      width: 2.5em;
+      height: 6em;
       align-self: flex-start;
       margin-top: 5px;
     }
@@ -31,14 +31,14 @@
     display: flex;
     flex-flow: column;
     align-items: center;
-    padding: 10px;
-    gap: 10px;
+    padding: 0.6em;
+    gap: 0.7em;
     background: $white;
     border-left: 1px solid $grayLight;
   }
 
   &.closed {
-    transform: translateX(130px);
+    transform: translateX(120px);
 
     .navToggleButton {
       svg {

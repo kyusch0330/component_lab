@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 import { Route } from "react-router-dom";
 import PageMenu from "views/PageMenu/PageMenu";
-import DragAndDrop from "components/DragAndDrops/BasicDragAndDrop/DragAndDrop";
-import "./DragAndDropPage.scss";
+import BarChart from "components/Charts/BarChart/BarChart";
+import "./ChartPage.scss";
 
-const DragAndDropPage = () => {
+const ChartPage = () => {
   const [display, setDisplay] = useState(true);
   const [current, setCurrent] = useState(0);
   const paths = [
-    ["basic D&D", "/drag-and-drop"],
+    ["bar chart", "/chart"],
     // ["drag and put in", "/drag-and-drop/drag-and-put-in"],
   ];
 
-  const components = [DragAndDrop];
+  const components = [BarChart];
   return (
-    <div className="dragAndDropPageContainer">
+    <div className="chartPageContainer">
       <PageMenu
         display={display}
         setDisplay={setDisplay}
@@ -34,4 +34,4 @@ const DragAndDropPage = () => {
   );
 };
 
-export default DragAndDropPage;
+export default ChartPage;
