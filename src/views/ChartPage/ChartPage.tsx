@@ -3,16 +3,18 @@ import { Route } from "react-router-dom";
 import PageMenu from "views/PageMenu/PageMenu";
 import BarChart from "components/Charts/BarChart/BarChart";
 import "./ChartPage.scss";
+import PieChart from "components/Charts/PieChart/PieChart";
 
 const ChartPage = () => {
   const [display, setDisplay] = useState(true);
   const [current, setCurrent] = useState(0);
   const paths = [
     ["bar chart", "/chart"],
+    ["pie chart", "/chart/pie-chart"],
     // ["drag and put in", "/drag-and-drop/drag-and-put-in"],
   ];
 
-  const components = [BarChart];
+  const components = [BarChart, PieChart];
   return (
     <div className="chartPageContainer">
       <PageMenu

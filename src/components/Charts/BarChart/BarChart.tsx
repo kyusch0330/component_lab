@@ -10,7 +10,6 @@ const BarChart = () => {
       dataValue: data,
     }))
   );
-  console.log(dataList);
   return (
     <div className="barChartContainer">
       <DataGenerator dataList={dataList} setDataList={setDataList} />
