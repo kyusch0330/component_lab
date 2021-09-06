@@ -11,7 +11,6 @@ const ChartPage = () => {
   const paths = [
     ["bar chart", "/chart"],
     ["pie chart", "/chart/pie-chart"],
-    // ["drag and put in", "/drag-and-drop/drag-and-put-in"],
   ];
 
   const components = [BarChart, PieChart];
