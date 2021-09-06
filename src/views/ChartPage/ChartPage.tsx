@@ -4,6 +4,7 @@ import PageMenu from "views/PageMenu/PageMenu";
 import BarChart from "components/Charts/BarChart/BarChart";
 import "./ChartPage.scss";
 import PieChart from "components/Charts/PieChart/PieChart";
+import DonutChart from "components/Charts/DonutChart/DonutChart";
 
 const ChartPage = () => {
   const [display, setDisplay] = useState(true);
@@ -11,9 +12,10 @@ const ChartPage = () => {
   const paths = [
     ["bar chart", "/chart"],
     ["pie chart", "/chart/pie-chart"],
+    ["donut chart", "/chart/donut-chart"],
   ];
 
-  const components = [BarChart, PieChart];
+  const components = [BarChart, PieChart, DonutChart];
   return (
     <div className="chartPageContainer">
       <PageMenu
