@@ -30,13 +30,13 @@ const DonutChart = () => {
           setValueToDisplay((valueToDisplay) =>
             valueToDisplay.map((value, index) =>
               value < dataList[index].dataValue
-                ? value < (dataList[index].dataValue * 3) / 5
+                ? value < (dataList[index].dataValue * 5) / 7
                   ? value + 2
                   : value + 1
                 : value
             )
           ),
-        12
+        20
       );
     }
   }, [valueToDisplay]);
