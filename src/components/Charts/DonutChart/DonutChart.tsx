@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DataGenerator from "../DataGenerator/DataGenerator";
 import "./DonutChart.scss";
 const DonutChart = () => {
@@ -9,25 +9,52 @@ const DonutChart = () => {
       dataValue: Number(data),
     }))
   );
+  const [valueToDisplay, setValueToDisplay] = useState(
+    new Array(dataList.length).fill(0)
+  );
+
+  useEffect(() => {
+    setValueToDisplay(new Array(dataList.length).fill(0));
+  }, [dataList]);
+
+  useEffect(() => {
+    if (
+      valueToDisplay.every(
+        (value, index) => value === dataList[index].dataValue
+      )
+    )
+      return;
+    else {
+      setTimeout(
+        () =>
+          setValueToDisplay((valueToDisplay) =>
+            valueToDisplay.map((value, index) =>
+              value < dataList[index].dataValue ? value + 1 : value
+            )
+          ),
+        12
+      );
+    }
+  }, [valueToDisplay]);
 
   const colors = ["#ce4e4e", "#feae4e", "#4ece4e", "#4e4ece", "#ae4ede"];
   return (
     <div className="donutChartContainer">
       <DataGenerator dataList={dataList} setDataList={setDataList} />
       <div className="chartContainer">
-        {dataList.map((data, index) => {
+        {valueToDisplay.map((value, index) => {
           return (
             <div
-              key={data.dataId}
+              key={dataList[index].dataId}
               className="chart"
               style={{
                 color: colors[index],
                 background: `conic-gradient(${colors[index]} ${Math.floor(
-                  data.dataValue * 3.6
-                )}deg, #dfdfdf ${Math.floor(data.dataValue * 3.6)}deg)`,
+                  value * 3.6
+                )}deg, #dfdfdf ${Math.floor(value * 3.6)}deg)`,
               }}
             >
-              <div className="dataValue">{data.dataValue}%</div>
+              <div className="dataValue">{value}%</div>
             </div>
           );
         })}
