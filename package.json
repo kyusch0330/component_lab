@@ -46,5 +46,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://kyusch0330.github.io/component_lab"
+  "homepage": "https://kyusch0330.github.io/component_lab",
+  "devDependencies": {
+    "file-loader": "^6.2.0"
+  }
 }
