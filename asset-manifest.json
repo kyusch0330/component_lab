@@ -1,27 +1,32 @@
 {
   "files": {
-    "main.css": "/component_lab/static/css/main.1d1dc344.chunk.css",
-    "main.js": "/component_lab/static/js/main.a567dee0.chunk.js",
-    "main.js.map": "/component_lab/static/js/main.a567dee0.chunk.js.map",
+    "main.css": "/component_lab/static/css/main.056791d9.chunk.css",
+    "main.js": "/component_lab/static/js/main.e1513b2e.chunk.js",
+    "main.js.map": "/component_lab/static/js/main.e1513b2e.chunk.js.map",
     "runtime-main.js": "/component_lab/static/js/runtime-main.2f8e3ff4.js",
     "runtime-main.js.map": "/component_lab/static/js/runtime-main.2f8e3ff4.js.map",
     "static/js/2.07b054c7.chunk.js": "/component_lab/static/js/2.07b054c7.chunk.js",
     "static/js/2.07b054c7.chunk.js.map": "/component_lab/static/js/2.07b054c7.chunk.js.map",
     "index.html": "/component_lab/index.html",
-    "static/css/main.1d1dc344.chunk.css.map": "/component_lab/static/css/main.1d1dc344.chunk.css.map",
+    "static/css/main.056791d9.chunk.css.map": "/component_lab/static/css/main.056791d9.chunk.css.map",
     "static/js/2.07b054c7.chunk.js.LICENSE.txt": "/component_lab/static/js/2.07b054c7.chunk.js.LICENSE.txt",
+    "static/media/allthat.2b92a01d.mp3": "/component_lab/static/media/allthat.2b92a01d.mp3",
     "static/media/chart.459adda5.svg": "/component_lab/static/media/chart.459adda5.svg",
     "static/media/dots.16b852e7.svg": "/component_lab/static/media/dots.16b852e7.svg",
     "static/media/drag.b9caca8a.svg": "/component_lab/static/media/drag.b9caca8a.svg",
+    "static/media/jazzyfrenchy.0b6f6a12.mp3": "/component_lab/static/media/jazzyfrenchy.0b6f6a12.mp3",
+    "static/media/love.ab051093.mp3": "/component_lab/static/media/love.ab051093.mp3",
     "static/media/pause.94b3b031.svg": "/component_lab/static/media/pause.94b3b031.svg",
     "static/media/play.1b4fe477.svg": "/component_lab/static/media/play.1b4fe477.svg",
     "static/media/right-arrow.b7f95d22.svg": "/component_lab/static/media/right-arrow.b7f95d22.svg",
-    "static/media/slider.a56d2e3e.svg": "/component_lab/static/media/slider.a56d2e3e.svg"
+    "static/media/slider.a56d2e3e.svg": "/component_lab/static/media/slider.a56d2e3e.svg",
+    "static/media/sound.0fe01898.svg": "/component_lab/static/media/sound.0fe01898.svg",
+    "static/media/thejazzpiano.85fb37db.mp3": "/component_lab/static/media/thejazzpiano.85fb37db.mp3"
   },
   "entrypoints": [
     "static/js/runtime-main.2f8e3ff4.js",
     "static/js/2.07b054c7.chunk.js",
-    "static/css/main.1d1dc344.chunk.css",
-    "static/js/main.a567dee0.chunk.js"
+    "static/css/main.056791d9.chunk.css",
+    "static/js/main.e1513b2e.chunk.js"
   ]
 }
