@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/component_lab/static/css/main.a1237818.chunk.css",
-    "main.js": "/component_lab/static/js/main.34e85f54.chunk.js",
-    "main.js.map": "/component_lab/static/js/main.34e85f54.chunk.js.map",
+    "main.css": "/component_lab/static/css/main.d0cf814a.chunk.css",
+    "main.js": "/component_lab/static/js/main.d8e310fd.chunk.js",
+    "main.js.map": "/component_lab/static/js/main.d8e310fd.chunk.js.map",
     "runtime-main.js": "/component_lab/static/js/runtime-main.2f8e3ff4.js",
     "runtime-main.js.map": "/component_lab/static/js/runtime-main.2f8e3ff4.js.map",
-    "static/js/2.07b054c7.chunk.js": "/component_lab/static/js/2.07b054c7.chunk.js",
-    "static/js/2.07b054c7.chunk.js.map": "/component_lab/static/js/2.07b054c7.chunk.js.map",
+    "static/js/2.13b91f05.chunk.js": "/component_lab/static/js/2.13b91f05.chunk.js",
+    "static/js/2.13b91f05.chunk.js.map": "/component_lab/static/js/2.13b91f05.chunk.js.map",
     "index.html": "/component_lab/index.html",
-    "static/css/main.a1237818.chunk.css.map": "/component_lab/static/css/main.a1237818.chunk.css.map",
-    "static/js/2.07b054c7.chunk.js.LICENSE.txt": "/component_lab/static/js/2.07b054c7.chunk.js.LICENSE.txt",
+    "static/css/main.d0cf814a.chunk.css.map": "/component_lab/static/css/main.d0cf814a.chunk.css.map",
+    "static/js/2.13b91f05.chunk.js.LICENSE.txt": "/component_lab/static/js/2.13b91f05.chunk.js.LICENSE.txt",
     "static/media/allthat.2b92a01d.mp3": "/component_lab/static/media/allthat.2b92a01d.mp3",
     "static/media/chart.459adda5.svg": "/component_lab/static/media/chart.459adda5.svg",
     "static/media/dots.16b852e7.svg": "/component_lab/static/media/dots.16b852e7.svg",
     "static/media/drag.b9caca8a.svg": "/component_lab/static/media/drag.b9caca8a.svg",
+    "static/media/game.83999416.svg": "/component_lab/static/media/game.83999416.svg",
     "static/media/jazzyfrenchy.0b6f6a12.mp3": "/component_lab/static/media/jazzyfrenchy.0b6f6a12.mp3",
     "static/media/love.ab051093.mp3": "/component_lab/static/media/love.ab051093.mp3",
     "static/media/pause.94b3b031.svg": "/component_lab/static/media/pause.94b3b031.svg",
@@ -26,8 +27,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.2f8e3ff4.js",
-    "static/js/2.07b054c7.chunk.js",
-    "static/css/main.a1237818.chunk.css",
-    "static/js/main.34e85f54.chunk.js"
+    "static/js/2.13b91f05.chunk.js",
+    "static/css/main.d0cf814a.chunk.css",
+    "static/js/main.d8e310fd.chunk.js"
   ]
 }
