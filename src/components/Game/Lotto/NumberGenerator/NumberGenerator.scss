@@ -1,0 +1,52 @@
+@import "/src/constants/Pallete.scss";
+.numberGeneratorContainer {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+
+  .numberList {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 40em;
+    min-height: 6vh;
+    gap: 1%;
+
+    li {
+      width: 6vh;
+      height: 6vh;
+      text-align: center;
+      line-height: 6vh;
+      list-style: none;
+      border-radius: 50%;
+      font-size: 1.2em;
+    }
+
+    :nth-child(7) {
+      border: none;
+    }
+  }
+
+  .generateBtn {
+    padding: 1em 2em;
+    border: 1px solid $gray;
+    border-radius: 2px;
+    color: $blackTrans;
+    background: $grayLight;
+    transition: background 500ms;
+    &:hover {
+      cursor: pointer;
+      background: $grayTrans;
+    }
+    &.gen {
+      background: $orange;
+    }
+    &.notValid {
+      background: $blackTrans;
+    }
+  }
+}

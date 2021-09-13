@@ -5,6 +5,7 @@ import { ReactComponent as SliderImg } from "assets/slider.svg";
 import { ReactComponent as DragImg } from "assets/drag.svg";
 import { ReactComponent as ChartImg } from "assets/chart.svg";
 import { ReactComponent as SoundImg } from "assets/sound.svg";
+import { ReactComponent as GameImg } from "assets/game.svg";
 import { useState } from "react";
 
 const Navigation = () => {
@@ -30,6 +31,9 @@ const Navigation = () => {
         </ComponentItem>
         <ComponentItem name="Sound" path="/sound">
           <SoundImg width={32} height={32} />
+        </ComponentItem>
+        <ComponentItem name="Game" path="/game">
+          <GameImg width={32} height={32} />
         </ComponentItem>
       </div>
     </nav>

@@ -6,6 +6,7 @@ import Navigation from "../views/Navigation/Navigation";
 import "./Routes.scss";
 import ChartPage from "views/ChartPage/ChartPage";
 import SoundPage from "views/SoundPage/SoundPage";
+import GamePage from "views/GamePage/GamePage";
 
 const Routes = () => {
   return (
@@ -18,6 +19,7 @@ const Routes = () => {
             <Route path="/drag-and-drop" component={DragAndDropPage} />
             <Route path="/chart" component={ChartPage} />
             <Route path="/sound" component={SoundPage} />
+            <Route path="/game" component={GamePage} />
           </Switch>
         </div>
       </div>

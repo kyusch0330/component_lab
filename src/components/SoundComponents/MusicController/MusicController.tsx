@@ -107,6 +107,7 @@ const MusicController = () => {
           }}
         >
           <div
+            className="progressBarContainer"
             style={{
               width: `${(time / currentMusic.audio.duration) * 100}%`,
               height: "100%",
@@ -114,6 +115,7 @@ const MusicController = () => {
             }}
           ></div>
           <div
+            className="progressBar"
             style={{
               width: "10px",
               height: "10px",
@@ -126,7 +128,7 @@ const MusicController = () => {
             }}
           ></div>
         </div>
-        <span>
+        <span className="playTime">
           {("0" + Math.floor(time / 60).toString()).slice(-2) +
             ":" +
             ("0" + Math.floor(time % 60).toString()).slice(-2)}
