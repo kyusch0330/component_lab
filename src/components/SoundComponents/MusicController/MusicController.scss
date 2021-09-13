@@ -44,5 +44,14 @@
         cursor: pointer;
       }
     }
+    .playOptionContainer {
+      svg {
+        width: 1em;
+        height: 1em;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
   }
 }
