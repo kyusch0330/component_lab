@@ -2,9 +2,103 @@
 
 .paintContainer {
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(to right, $blackTrans, $black);
+  overflow: scroll;
+  padding: 6em 0 3em 0;
+
+  .paintCanvas {
+    width: 18em;
+    height: 18em;
+    border: 2px solid $grayTrans;
+    border-radius: 5px;
+    background: $white;
+  }
+
+  .controls {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+
+    .controls__brushSizes {
+      margin-top: 1em;
+
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      input[type="range"] {
+        background: $green;
+      }
+      .controls__brushSize {
+        border-radius: 50%;
+        background: $white;
+
+        &.selected {
+          border: 3px solid $white;
+          background: $black;
+        }
+      }
+    }
+    .controls__menu {
+      padding: 1em 0;
+      width: 80%;
+      display: flex;
+      gap: 0.4em;
+      justify-content: center;
+      .paintModeBtn {
+        width: 4em;
+        height: 4em;
+        border: 1px solid $grayTrans;
+        border-radius: 5px;
+        padding: 1em;
+        background: $gray;
+        svg {
+          width: 2em;
+          height: 2em;
+        }
+        &.selected {
+          background: $white;
+          transform: scale(1.1);
+        }
+      }
+      #saveBtn {
+        border: 1px solid $blackTrans;
+        width: 3em;
+        font-size: 1.2em;
+        margin-left: 1em;
+        background: $white;
+        fill: $blackTrans;
+        border-radius: 5px;
+        svg {
+          width: 1.2em;
+          height: 1.2em;
+        }
+      }
+      button:hover {
+        cursor: pointer;
+      }
+    }
+    .controls__colors {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      padding: 0.5em 0;
+      gap: 0.2em;
+      .controls__color {
+        width: 2em;
+        height: 2em;
+        border: 1px solid $grayTrans;
+        border-radius: 50%;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
 }
