@@ -93,7 +93,7 @@ const Lotto = () => {
                 setMyNumbers((myNumbers) =>
                   myNumbers
                     .slice(0, index)
-                    .concat(e.target.value)
+                    .concat(num)
                     .concat(myNumbers.slice(index + 1))
                 );
               }}

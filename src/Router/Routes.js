@@ -7,6 +7,7 @@ import "./Routes.scss";
 import ChartPage from "views/ChartPage/ChartPage";
 import SoundPage from "views/SoundPage/SoundPage";
 import GamePage from "views/GamePage/GamePage";
+import CanvasPage from "views/CanvasPage/CanvasPage";
 
 const Routes = () => {
   return (
@@ -20,6 +21,7 @@ const Routes = () => {
             <Route path="/chart" component={ChartPage} />
             <Route path="/sound" component={SoundPage} />
             <Route path="/game" component={GamePage} />
+            <Route path="/canvas" component={CanvasPage} />
           </Switch>
         </div>
       </div>
