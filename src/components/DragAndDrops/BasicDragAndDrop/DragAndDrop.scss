@@ -32,6 +32,7 @@
       border: 1px solid $grayLight;
       border-radius: 5px;
       background: $whiteTrans;
+      touch-action: none;
       .box_grabArea {
         cursor: grab;
         position: absolute;
