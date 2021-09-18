@@ -38,7 +38,8 @@ const Paint = () => {
     const ctxInit = canvas.current?.getContext("2d");
     if (!ctxInit) return;
     ctxInit.strokeStyle = colors[0].colorValue;
-    ctxInit.fillStyle = colors[0].colorValue;
+    ctxInit.fillStyle = colors[2].colorValue;
+    ctxInit.fillRect(0, 0, 300, 400);
     ctxInit.lineWidth = brushSizes[0];
 
     setCtx(ctxInit);
@@ -78,14 +79,25 @@ const Paint = () => {
     ctx?.beginPath(); //경로 생성
     ctx?.moveTo(x, y); //선 시작 좌표
   };
+
   const handleBrushTouchMove = (e: React.TouchEvent<HTMLCanvasElement>) => {
     const x = e.touches[0].clientX - Number(canvas.current?.offsetLeft);
     const y =
       e.touches[0].pageY -
       Number(canvas.current?.offsetTop) +
-      document.getElementsByClassName("paintContainer")[0].scrollTop;
+      document.getElementsByClassName("paintContainer")[0].scrollTop; // 스크롤 위치 보정
     ctx?.lineTo(x, y); //선 끝 좌표
     ctx?.stroke(); //선 그리기
+  };
+
+  const savePaint = () => {
+    const imageURL = canvas.current?.toDataURL(); //캔버스 이미지를 dataURL로 (주소 클릭시 이미지만)
+    //default는 PNG, 다른 형식 예시: toDataURL("image/jpeg") -> JPEG 형식
+    if (!imageURL) return;
+    const link = document.createElement("a"); //가상의 링크
+    link.href = imageURL; //링크 주소 설정
+    link.download = "CompoLapPaint_download"; //이름 설정
+    link.click(); //가상의 링크 클릭 동작
   };
 
   return (
@@ -99,16 +111,17 @@ const Paint = () => {
         className="paintCanvas"
         width={300} //css와 별개로 크기를 지정해줘야 함
         height={400}
+        onContextMenu={(e) => e.preventDefault()}
         onMouseMove={(e) => paintMode === 0 && handleBrushMove(e)}
-        onMouseDown={(e) => paintMode === 0 && setPainting(true)}
-        onMouseUp={(e) => paintMode === 0 && setPainting(false)}
-        onMouseLeave={(e) => paintMode === 0 && setPainting(false)}
+        onMouseDown={() => paintMode === 0 && setPainting(true)}
+        onMouseUp={() => paintMode === 0 && setPainting(false)}
+        onMouseLeave={() => paintMode === 0 && setPainting(false)}
         onTouchStart={(e) => paintMode === 0 && handleBrushTouchStart(e)}
         onTouchMove={(e) => {
           paintMode === 0 && handleBrushTouchMove(e);
         }}
-        onTouchEnd={(e) => paintMode === 0 && setPainting(false)}
-        onClick={(e) => {
+        onTouchEnd={() => paintMode === 0 && setPainting(false)}
+        onClick={() => {
           if (paintMode === 1) {
             ctx?.fillRect(0, 0, 300, 400);
           }
@@ -135,7 +148,7 @@ const Paint = () => {
                   width: viewSize,
                   height: viewSize,
                 }}
-                onClick={(e) => setBrushSize(size)}
+                onClick={() => setBrushSize(size)}
               ></div>
             );
           })}
@@ -153,16 +166,18 @@ const Paint = () => {
           >
             <FillImg />
           </button>
-          <button id="saveBtn">
+          <button id="saveBtn" onClick={savePaint}>
             <SaveImg />
           </button>
         </div>
         <div id="jsColors" className="controls__colors">
-          {colors.map((color) => (
+          {colors.map((clr) => (
             <div
-              className="controls__color"
-              style={{ background: color.colorValue }}
-              onClick={() => setColor(color)}
+              className={`controls__color${
+                clr.colorName === color.colorName ? " selected" : ""
+              }`}
+              style={{ background: clr.colorValue }}
+              onClick={() => setColor(clr)}
             ></div>
           ))}
         </div>

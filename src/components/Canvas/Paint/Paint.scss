@@ -99,6 +99,9 @@
         &:hover {
           cursor: pointer;
         }
+        &.selected {
+          border: 0.3em solid rgba(230, 230, 230, 0.7);
+        }
       }
     }
   }
