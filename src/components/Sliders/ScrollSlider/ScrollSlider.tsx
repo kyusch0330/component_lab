@@ -66,13 +66,21 @@ const proverbs = [
 
 const ScrollSlider = () => {
   const [currentTab, setCurrentTab] = useState(0);
+
+  const moveToTab = (tabIndex: number) => {
+    const scrollView = document.getElementsByClassName("sliderView")[0];
+    const viewWidth = scrollView.clientWidth;
+    scrollView.scrollLeft = tabIndex * viewWidth;
+  };
   return (
     <div className="scrollSliderContainer">
       <div className="sliderTabs">
         {proverbs.map((proverb, index) => {
           return (
             <button
+              key={proverb.id}
               className={`sliderTab${index === currentTab ? " selected" : ""}`}
+              onClick={() => moveToTab(index)}
             >
               {proverb.title}
             </button>
@@ -81,7 +89,7 @@ const ScrollSlider = () => {
       </div>
       <div
         className="sliderView"
-        onScroll={(e) => {
+        onScroll={() => {
           const scrollView = document.getElementsByClassName("sliderView")[0];
           const scroll = scrollView.scrollLeft;
           const viewWidth = scrollView.clientWidth;
@@ -93,7 +101,11 @@ const ScrollSlider = () => {
           );
         }}
       >
-        <div className="slider" style={{ width: `${proverbs.length * 100}%` }}>
+        <div
+          className="slider"
+          style={{ width: `${proverbs.length * 100}%` }}
+          onTouchEnd={() => moveToTab(currentTab)}
+        >
           {proverbs.map((proverb) => {
             return (
               <div

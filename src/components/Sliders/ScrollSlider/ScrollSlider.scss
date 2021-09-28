@@ -1,5 +1,5 @@
 @import "/src/constants/Pallete.scss";
-// $length: 3;
+
 .scrollSliderContainer {
   width: 100%;
   height: 100%;
@@ -7,6 +7,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 2em;
 
   .sliderTabs {
     display: flex;
@@ -14,11 +15,15 @@
     flex-wrap: wrap;
     .sliderTab {
       border: 1px solid $grayLight;
-      padding: 0.2em;
+      padding: 0.4em;
       background: $white;
+      font-size: 0.6em;
       &.selected {
         background: $blackTrans;
         color: $white;
+      }
+      &:hover {
+        cursor: pointer;
       }
     }
   }
@@ -28,6 +33,7 @@
     height: 20em;
     border: 1px solid $blackTrans;
     overflow-x: scroll;
+    scroll-behavior: smooth; // 스크롤 변경시 애니메이션
     padding: 0.5em 0;
   }
   .slider {

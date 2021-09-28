@@ -28,7 +28,12 @@ const SliderPage = () => {
       />
 
       {paths.map((path, pIndex) => (
-        <Route exact path={path[1]} component={components[pIndex]} />
+        <Route
+          exact
+          path={path[1]}
+          component={components[pIndex]}
+          key={pIndex}
+        />
       ))}
     </div>
   );
