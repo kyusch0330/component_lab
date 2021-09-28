@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/component_lab/static/css/main.21484473.chunk.css",
+    "main.css": "/component_lab/static/css/main.2b675d5f.chunk.css",
     "main.js": "/component_lab/static/js/main.1d67cceb.chunk.js",
     "main.js.map": "/component_lab/static/js/main.1d67cceb.chunk.js.map",
     "runtime-main.js": "/component_lab/static/js/runtime-main.2f8e3ff4.js",
@@ -8,7 +8,7 @@
     "static/js/2.13b91f05.chunk.js": "/component_lab/static/js/2.13b91f05.chunk.js",
     "static/js/2.13b91f05.chunk.js.map": "/component_lab/static/js/2.13b91f05.chunk.js.map",
     "index.html": "/component_lab/index.html",
-    "static/css/main.21484473.chunk.css.map": "/component_lab/static/css/main.21484473.chunk.css.map",
+    "static/css/main.2b675d5f.chunk.css.map": "/component_lab/static/css/main.2b675d5f.chunk.css.map",
     "static/js/2.13b91f05.chunk.js.LICENSE.txt": "/component_lab/static/js/2.13b91f05.chunk.js.LICENSE.txt",
     "static/media/allthat.2b92a01d.mp3": "/component_lab/static/media/allthat.2b92a01d.mp3",
     "static/media/brush.95650063.svg": "/component_lab/static/media/brush.95650063.svg",
@@ -32,7 +32,7 @@
   "entrypoints": [
     "static/js/runtime-main.2f8e3ff4.js",
     "static/js/2.13b91f05.chunk.js",
-    "static/css/main.21484473.chunk.css",
+    "static/css/main.2b675d5f.chunk.css",
     "static/js/main.1d67cceb.chunk.js"
   ]
 }
