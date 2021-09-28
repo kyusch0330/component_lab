@@ -1,0 +1,50 @@
+@import "/src/constants/Pallete.scss";
+// $length: 3;
+.scrollSliderContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .sliderTabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    .sliderTab {
+      border: 1px solid $grayLight;
+      padding: 0.2em;
+      background: $white;
+      &.selected {
+        background: $blackTrans;
+        color: $white;
+      }
+    }
+  }
+  .sliderView {
+    width: 90%;
+    max-width: 16em;
+    height: 20em;
+    border: 1px solid $blackTrans;
+    overflow-x: scroll;
+    padding: 0.5em 0;
+  }
+  .slider {
+    height: 100%;
+    display: flex;
+  }
+  .sliderCard {
+    flex: 1;
+    background: $white;
+    border-right: 1px solid $grayTrans;
+    padding: 2em;
+    color: $white;
+    p {
+      margin-top: 50%;
+    }
+    :last-child() {
+      border: none;
+    }
+  }
+}

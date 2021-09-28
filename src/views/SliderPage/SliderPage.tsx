@@ -6,6 +6,7 @@ import CircularSlider from "components/Sliders/CircularSlider/CircularSlider";
 import { ReactComponent as ArrowImg } from "assets/right-arrow.svg";
 import "./SliderPage.scss";
 import PageMenu from "views/PageMenu/PageMenu";
+import ScrollSlider from "components/Sliders/ScrollSlider/ScrollSlider";
 const SliderPage = () => {
   const [display, setDisplay] = useState(true);
   const [current, setCurrent] = useState(0);
@@ -13,8 +14,9 @@ const SliderPage = () => {
     ["basic slider", "/slider"],
     ["vertical slider", "/slider/vertical"],
     ["circular slider", "/slider/circular"],
+    ["scroll slider", "/slider/scroll"],
   ];
-  const components = [Slider, VerticalSlider, CircularSlider];
+  const components = [Slider, VerticalSlider, CircularSlider, ScrollSlider];
   return (
     <div className="sliderPageContainer">
       <PageMenu
