@@ -73,6 +73,9 @@ const ScrollSlider = () => {
     const viewWidth = scrollView.clientWidth;
     scrollView.scrollLeft = tabIndex * viewWidth;
   };
+  const reScroll = () => {
+    setMoveScroll(setTimeout(() => moveToTab(currentTab), 100));
+  };
   return (
     <div className="scrollSliderContainer">
       <div className="sliderTabs">
@@ -102,13 +105,18 @@ const ScrollSlider = () => {
             clearTimeout(moveScroll);
           }
           if (!isScrolling) {
-            setMoveScroll(setTimeout(() => moveToTab(currentTab), 100));
+            reScroll();
           }
+        }}
+        onMouseDown={() => setIsScrolling(true)}
+        onMouseUp={() => {
+          setIsScrolling(false);
+          reScroll();
         }}
         onTouchStart={() => setIsScrolling(true)}
         onTouchEnd={() => {
           setIsScrolling(false);
-          setMoveScroll(setTimeout(() => moveToTab(currentTab), 100));
+          reScroll();
         }}
       >
         <div className="slider" style={{ width: `${proverbs.length * 100}%` }}>
