@@ -10,7 +10,6 @@ const Slider = () => {
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
   const cardWidth = document.querySelector(".slideCard")?.clientWidth; //슬라이드 한 장의 width
-  console.log(cardWidth);
 
   useEffect(() => {
     if (paused) return;
