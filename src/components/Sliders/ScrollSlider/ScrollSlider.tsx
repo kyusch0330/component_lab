@@ -66,7 +66,8 @@ const proverbs = [
 
 const ScrollSlider = () => {
   const [currentTab, setCurrentTab] = useState(0);
-
+  const [isScrolling, setIsScrolling] = useState(false);
+  const [moveScroll, setMoveScroll] = useState<NodeJS.Timeout>();
   const moveToTab = (tabIndex: number) => {
     const scrollView = document.getElementsByClassName("sliderView")[0];
     const viewWidth = scrollView.clientWidth;
@@ -93,19 +94,24 @@ const ScrollSlider = () => {
           const scrollView = document.getElementsByClassName("sliderView")[0];
           const scroll = scrollView.scrollLeft;
           const viewWidth = scrollView.clientWidth;
-          // console.log(
-          //   Math.floor((scroll + Math.floor(viewWidth / 2)) / viewWidth)
-          // );
+
           setCurrentTab(
             Math.floor((scroll + Math.floor(viewWidth / 2)) / viewWidth)
           );
+          if (moveScroll) {
+            clearTimeout(moveScroll);
+          }
+          if (!isScrolling) {
+            setMoveScroll(setTimeout(() => moveToTab(currentTab), 100));
+          }
+        }}
+        onTouchStart={() => setIsScrolling(true)}
+        onTouchEnd={() => {
+          setIsScrolling(false);
+          setMoveScroll(setTimeout(() => moveToTab(currentTab), 100));
         }}
       >
-        <div
-          className="slider"
-          style={{ width: `${proverbs.length * 100}%` }}
-          onTouchEnd={() => moveToTab(currentTab)}
-        >
+        <div className="slider" style={{ width: `${proverbs.length * 100}%` }}>
           {proverbs.map((proverb) => {
             return (
               <div
