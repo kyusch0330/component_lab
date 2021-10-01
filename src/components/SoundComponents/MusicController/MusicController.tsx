@@ -9,21 +9,24 @@ import { ReactComponent as PlayImg } from "assets/play.svg";
 import { ReactComponent as PauseImg } from "assets/pause.svg";
 import { ReactComponent as RepeatImg } from "assets/repeat.svg";
 
+const musics = [
+  { id: "001", title: "Love", audio: new Audio(music_love) },
+  { id: "002", title: "Jazzy Frenchy", audio: new Audio(music_jazzyFrenchy) },
+  { id: "003", title: "All that", audio: new Audio(music_allthat) },
+  {
+    id: "004",
+    title: "The jazz piano",
+    audio: new Audio(music_thejazzpiano),
+  },
+];
+
 const MusicController = () => {
-  const musics = [
-    { id: "001", title: "Love", audio: new Audio(music_love) },
-    { id: "002", title: "Jazzy Frenchy", audio: new Audio(music_jazzyFrenchy) },
-    { id: "003", title: "All that", audio: new Audio(music_allthat) },
-    {
-      id: "004",
-      title: "The jazz piano",
-      audio: new Audio(music_thejazzpiano),
-    },
-  ];
   const [currentMusic, setCurrentMusic] = useState(musics[0]);
   const [playing, setPlaying] = useState(false);
   const [loop, setLoop] = useState(false);
   const [time, setTime] = useState(0);
+  const [skipping, setSkipping] = useState(false);
+  const [timeForSkip, setTimeForSkip] = useState(0);
 
   useEffect(() => {
     // if (playing) currentMusic.audio.play();
@@ -53,8 +56,47 @@ const MusicController = () => {
     currentMusic.audio.loop = loop;
   }, [loop]);
 
+  const setTimeFromTimeForSkip = () => {
+    setSkipping(false);
+    setTime(timeForSkip);
+    currentMusic.audio.currentTime = timeForSkip;
+  };
+
   return (
-    <div className="musicControllerContainer">
+    <div
+      className="musicControllerContainer"
+      onMouseMove={(e) => {
+        if (!skipping) return;
+        const progressBarContainer = document
+          .getElementsByClassName("progressBarContainer")[0]
+          .getBoundingClientRect();
+        const left = e.clientX - progressBarContainer.left;
+        if (left < 0) return;
+        const timePoint =
+          (left / progressBarContainer.width) * currentMusic.audio.duration;
+        if (timePoint < 0 || timePoint > currentMusic.audio.duration) return;
+        setTimeForSkip(timePoint);
+      }}
+      onMouseUp={() => {
+        setTimeFromTimeForSkip();
+      }}
+      onMouseLeave={() => {
+        setSkipping(false);
+      }}
+      onTouchMove={(e) => {
+        if (!skipping) return;
+        // const left = e.touches[0].clientX - e.currentTarget.offsetLeft;
+        const progressBarContainer = document
+          .getElementsByClassName("progressBarContainer")[0]
+          .getBoundingClientRect();
+        const left = e.touches[0].clientX - progressBarContainer.left;
+        if (left < 0) return;
+        const timePoint =
+          (left / progressBarContainer.width) * currentMusic.audio.duration;
+        if (timePoint < 0 || timePoint > currentMusic.audio.duration) return;
+        setTimeForSkip(timePoint);
+      }}
+    >
       <div className="musicListMenu">
         <h3>Music Menu : &nbsp;</h3>
         {musics.map((music, index) => (
@@ -90,41 +132,54 @@ const MusicController = () => {
           />
         </div>
         <div
-          style={{
-            width: "100%",
-            height: "10px",
-            border: "1px solid",
-            background: "gray",
-            position: "relative",
-          }}
+          className="progressBarContainer"
           onClick={(e) => {
             const timePoint =
               ((e.clientX - e.currentTarget.offsetLeft) /
                 e.currentTarget.offsetWidth) *
               currentMusic.audio.duration;
+            if (timePoint < 0 || timePoint > currentMusic.audio.duration)
+              return;
             currentMusic.audio.currentTime = timePoint;
             setTime(timePoint);
           }}
         >
           <div
-            className="progressBarContainer"
+            className="progressBar"
             style={{
-              width: `${(time / currentMusic.audio.duration) * 100}%`,
-              height: "100%",
-              background: "black",
+              width: skipping
+                ? `${(timeForSkip / currentMusic.audio.duration) * 100}%`
+                : `${
+                    (time /
+                      (isNaN(currentMusic.audio.duration)
+                        ? 1
+                        : currentMusic.audio.duration)) *
+                    100
+                  }%`,
             }}
           ></div>
           <div
-            className="progressBar"
+            className="progressBar_head"
             style={{
-              width: "10px",
-              height: "10px",
-              background: "white",
-              position: "absolute",
-              top: 0,
-              left: `${(time / currentMusic.audio.duration) * 100 - 2}%`,
-              border: "1px solid",
-              borderRadius: "50%",
+              left: skipping
+                ? `${(timeForSkip / currentMusic.audio.duration) * 100 - 2}%`
+                : `${
+                    (time /
+                      (isNaN(currentMusic.audio.duration)
+                        ? 1
+                        : currentMusic.audio.duration)) *
+                      100 -
+                    2
+                  }%`,
+            }}
+            onMouseDown={() => {
+              setSkipping(true);
+            }}
+            onTouchStart={() => {
+              setSkipping(true);
+            }}
+            onTouchEnd={() => {
+              setTimeFromTimeForSkip();
             }}
           ></div>
         </div>

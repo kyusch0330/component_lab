@@ -26,6 +26,9 @@
     &:hover {
       cursor: pointer;
     }
+    @media (max-width: 500px) {
+      left: 40%;
+    }
   }
   .sliderMenu {
     border-bottom: 1px solid $grayLight;
