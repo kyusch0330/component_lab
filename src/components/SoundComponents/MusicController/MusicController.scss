@@ -65,13 +65,13 @@
         background: $black;
       }
       .progressBar_head {
-        width: 0.8em;
-        height: 0.8em;
+        width: 1.2em;
+        height: 1.2em;
         background: $white;
         position: absolute;
-        top: -0.05em;
+        top: -0.25em;
         border: 1px solid $black;
-        border-radius: 50%;
+        border-radius: 40%;
       }
     }
   }
