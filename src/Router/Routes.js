@@ -8,6 +8,8 @@ import ChartPage from "views/ChartPage/ChartPage";
 import SoundPage from "views/SoundPage/SoundPage";
 import GamePage from "views/GamePage/GamePage";
 import CanvasPage from "views/CanvasPage/CanvasPage";
+import ModalPage from "views/ModalPage/ModalPage";
+import VideoPage from "views/VideoPage/VideoPage";
 
 const Routes = () => {
   return (
@@ -22,6 +24,8 @@ const Routes = () => {
             <Route path="/sound" component={SoundPage} />
             <Route path="/game" component={GamePage} />
             <Route path="/canvas" component={CanvasPage} />
+            <Route path="/modal" component={ModalPage} />
+            <Route path="/video" component={VideoPage} />
           </Switch>
         </div>
       </div>

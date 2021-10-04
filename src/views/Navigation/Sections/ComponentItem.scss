@@ -1,8 +1,8 @@
 @import "/src/constants/Pallete.scss";
 .componentItemLink {
   display: block;
-  width: 100px;
-  height: 100px;
+  width: 6.25em;
+  min-height: 6.25em;
   padding: 5px;
   background: $white;
   border: 1px solid $grayLight;

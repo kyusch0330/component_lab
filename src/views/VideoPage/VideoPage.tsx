@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Route } from "react-router-dom";
-import "./SoundPage.scss";
+import "./VideoPage.scss";
 import PageMenu from "views/PageMenu/PageMenu";
-import MusicController from "components/SoundComponents/MusicController/MusicController";
-const SliderPage = () => {
+import BasicModal from "components/Modal/BasicModal/BasicModal";
+const VideoPage = () => {
   const [display, setDisplay] = useState(true);
   const [current, setCurrent] = useState(0);
-  const paths = [["music", "/sound"]];
-  const components = [MusicController];
+  const paths = [["video", "/video"]];
+  const components = [BasicModal];
   return (
-    <div className="soundPageContainer">
+    <div className="videoPageContainer">
       <PageMenu
         display={display}
         setDisplay={setDisplay}
@@ -19,10 +19,15 @@ const SliderPage = () => {
       />
 
       {paths.map((path, pIndex) => (
-        <Route exact path={path[1]} component={components[pIndex]} />
+        <Route
+          exact
+          path={path[1]}
+          component={components[pIndex]}
+          key={pIndex}
+        />
       ))}
     </div>
   );
 };
 
-export default SliderPage;
+export default VideoPage;

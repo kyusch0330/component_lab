@@ -39,6 +39,8 @@
     gap: 0.7em;
     background: $white;
     border-left: 1px solid $grayLight;
+
+    overflow-y: scroll;
   }
 
   &.closed {

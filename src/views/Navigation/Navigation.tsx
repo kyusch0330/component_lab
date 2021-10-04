@@ -7,6 +7,8 @@ import { ReactComponent as ChartImg } from "assets/chart.svg";
 import { ReactComponent as SoundImg } from "assets/sound.svg";
 import { ReactComponent as GameImg } from "assets/game.svg";
 import { ReactComponent as CanvasImg } from "assets/canvas.svg";
+import { ReactComponent as ModalImg } from "assets/modal.svg";
+import { ReactComponent as VideoImg } from "assets/video.svg";
 import { useState } from "react";
 
 const Navigation = () => {
@@ -40,7 +42,10 @@ const Navigation = () => {
           <CanvasImg width={32} height={32} />
         </ComponentItem>
         <ComponentItem name="Modal" path="/modal">
-          <CanvasImg width={32} height={32} />
+          <ModalImg width={32} height={32} />
+        </ComponentItem>
+        <ComponentItem name="Video" path="/video">
+          <VideoImg width={32} height={32} />
         </ComponentItem>
       </div>
     </nav>
