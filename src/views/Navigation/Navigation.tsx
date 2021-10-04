@@ -21,11 +21,11 @@ const Navigation = () => {
         <ArrowImg width={20} height={20} />
       </button>
       <div className="componentList">
-        <ComponentItem name="Drag & Drop" path="/drag-and-drop">
-          <DragImg width={32} height={32} />
-        </ComponentItem>
         <ComponentItem name="Slider" path="/slider">
           <SliderImg width={32} height={32} />
+        </ComponentItem>
+        <ComponentItem name="Drag & Drop" path="/drag-and-drop">
+          <DragImg width={32} height={32} />
         </ComponentItem>
         <ComponentItem name="Chart" path="/chart">
           <ChartImg width={32} height={32} />
@@ -37,6 +37,9 @@ const Navigation = () => {
           <GameImg width={32} height={32} />
         </ComponentItem>
         <ComponentItem name="Canvas" path="/canvas">
+          <CanvasImg width={32} height={32} />
+        </ComponentItem>
+        <ComponentItem name="Modal" path="/modal">
           <CanvasImg width={32} height={32} />
         </ComponentItem>
       </div>
