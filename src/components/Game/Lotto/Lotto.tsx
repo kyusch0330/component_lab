@@ -41,7 +41,9 @@ const Lotto = () => {
 
   useEffect(() => {
     if (!validNumbers()) return; //초기 실행 방지
-    setChecking(true);
+    setTimeout(() => {
+      setChecking(true);
+    }, 800);
   }, [numberList]);
 
   useEffect(() => {
