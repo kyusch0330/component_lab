@@ -32,7 +32,7 @@ const PageMenu = ({
         ))}
       </div>
       <button className="toggleMenuBtn" onClick={() => setDisplay(!display)}>
-        <ArrowImg width={20} height={20} />
+        <ArrowImg />
       </button>
     </div>
   );

@@ -9,8 +9,8 @@
   right: 0;
 
   .navToggleButton {
-    width: 3em;
-    height: 7em;
+    width: 2em;
+    height: 6em;
 
     background: $blackLight;
     border: 1px solid $grayTrans;
@@ -18,12 +18,14 @@
     border-radius: 5px 0 0 5px;
     position: absolute;
     top: 50%;
-    left: -3em;
+    left: -2em;
     &:hover {
       cursor: pointer;
     }
     svg {
       fill: $white;
+      width: 1em;
+      height: 1em;
     }
     @media (max-width: 500px) {
       width: 2.5em;
@@ -39,7 +41,7 @@
     display: flex;
     flex-flow: column;
     align-items: center;
-    padding: 2em;
+    padding: 1em;
     padding-bottom: 10em;
     gap: 0.7em;
 
@@ -50,7 +52,7 @@
   }
 
   &.closed {
-    transform: translateX(10.4em);
+    transform: translateX(8.3em);
 
     .navToggleButton {
       svg {

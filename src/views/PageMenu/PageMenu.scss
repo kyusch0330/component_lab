@@ -11,16 +11,20 @@
 
   z-index: 1000;
   .toggleMenuBtn {
-    width: 6em;
-    height: 3em;
+    width: 5em;
+    height: 1.5em;
     border: 1px solid $gray;
     border-top: none;
     border-radius: 0 0 5px 5px;
     background: $white;
     position: absolute;
-    left: 47%;
-    bottom: -3em;
+    left: 47.5%;
+    bottom: -1.5em;
     svg {
+      width: 1em;
+      height: 1em;
+      fill: $gray;
+      margin-top: 0.2em;
       transform: rotate(270deg);
     }
     &:hover {
