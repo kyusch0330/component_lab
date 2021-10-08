@@ -19,8 +19,10 @@ const DataGenerator = ({ dataList, setDataList }: Props) => {
     setGenerating(true);
     setTimeout(() => setGenerating(false), 800);
   };
+  console.log(tempDataList);
   useEffect(() => {
     if (!generating) {
+      console.log("FIX", tempDataList);
       fixData();
       return;
     }
@@ -29,7 +31,7 @@ const DataGenerator = ({ dataList, setDataList }: Props) => {
         setTempDataList(
           tempDataList.map((data) => ({
             ...data,
-            dataValue: Math.floor(Math.random() * 100),
+            dataValue: Math.floor(Math.random() * 99) + 1,
           }))
         ),
       50
@@ -49,9 +51,11 @@ const DataGenerator = ({ dataList, setDataList }: Props) => {
   return (
     <div className="dataGeneratorContainer">
       <ul className="dataList">
-        {tempDataList.map((data) => (
-          <li key={data.dataId}>{data.dataValue}</li>
-        ))}
+        {generating
+          ? tempDataList.map((data) => (
+              <li key={data.dataId}>{data.dataValue}</li>
+            ))
+          : dataList.map((data) => <li key={data.dataId}>{data.dataValue}</li>)}
       </ul>
       <button
         className={generating ? "generateBtn gen" : "generateBtn"}
