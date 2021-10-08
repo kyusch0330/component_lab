@@ -24,28 +24,28 @@ const Navigation = () => {
       </button>
       <div className="componentList">
         <ComponentItem name="Slider" path="/slider">
-          <SliderImg width={32} height={32} />
+          <SliderImg />
         </ComponentItem>
         <ComponentItem name="Drag & Drop" path="/drag-and-drop">
-          <DragImg width={32} height={32} />
+          <DragImg />
         </ComponentItem>
         <ComponentItem name="Chart" path="/chart">
-          <ChartImg width={32} height={32} />
+          <ChartImg />
         </ComponentItem>
         <ComponentItem name="Sound" path="/sound">
-          <SoundImg width={32} height={32} />
+          <SoundImg />
         </ComponentItem>
         <ComponentItem name="Game" path="/game">
-          <GameImg width={32} height={32} />
+          <GameImg />
         </ComponentItem>
         <ComponentItem name="Canvas" path="/canvas">
-          <CanvasImg width={32} height={32} />
+          <CanvasImg />
         </ComponentItem>
         <ComponentItem name="Modal" path="/modal">
-          <ModalImg width={32} height={32} />
+          <ModalImg />
         </ComponentItem>
         <ComponentItem name="Video" path="/video">
-          <VideoImg width={32} height={32} />
+          <VideoImg />
         </ComponentItem>
       </div>
     </nav>

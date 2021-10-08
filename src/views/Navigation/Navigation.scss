@@ -7,19 +7,23 @@
   position: fixed;
   top: 0;
   right: 0;
+
   .navToggleButton {
     width: 3em;
     height: 7em;
-    background: $white;
-    border: 1px solid $gray;
+
+    background: $blackLight;
+    border: 1px solid $grayTrans;
     border-right: none;
     border-radius: 5px 0 0 5px;
-    color: $gray;
     position: absolute;
     top: 50%;
     left: -3em;
     &:hover {
       cursor: pointer;
+    }
+    svg {
+      fill: $white;
     }
     @media (max-width: 500px) {
       width: 2.5em;
@@ -35,17 +39,18 @@
     display: flex;
     flex-flow: column;
     align-items: center;
-    padding: 0.6em;
+    padding: 2em;
     padding-bottom: 10em;
     gap: 0.7em;
-    background: $white;
-    border-left: 1px solid $grayLight;
+
+    background: $blackLight;
+    border-left: 1px solid $grayTrans;
 
     overflow-y: scroll;
   }
 
   &.closed {
-    transform: translateX(120px);
+    transform: translateX(10.4em);
 
     .navToggleButton {
       svg {

@@ -12,7 +12,7 @@ const ComponentItem = ({ name, path, children }: Props) => {
     <Link className="componentItemLink" to={path}>
       <div className="componentItemInner">
         {children}
-        {name}
+        <span className="componentName">{name}</span>
       </div>
     </Link>
   );
