@@ -7,7 +7,7 @@
   justify-content: center;
   align-items: center;
 
-  .popBtn {
+  .basicModal_popBtn {
     font-size: 1.1em;
     padding: 1em 2em;
     border: $grayTrans;
@@ -18,48 +18,48 @@
       cursor: pointer;
     }
   }
+}
 
-  .modalOverlay {
+.basicModal_overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $blackTrans;
+  z-index: 2000;
+
+  .basicModal {
+    width: 18em;
+    height: 12em;
+    background: $white;
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: $blackTrans;
-    z-index: 2000;
-
-    .modal {
-      width: 18em;
-      height: 12em;
-      background: $white;
+    padding: 1em;
+    .basicModal_closeBtn {
+      font-size: 0.9em;
+      padding: 0.5em 1em;
+      border: $grayTrans;
+      background: $red;
       border-radius: 5px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1em;
-      .closeBtn {
-        font-size: 0.9em;
-        padding: 0.5em 1em;
-        border: $grayTrans;
-        background: $red;
-        border-radius: 5px;
-        color: $white;
-        &:hover {
-          cursor: pointer;
-        }
+      color: $white;
+      &:hover {
+        cursor: pointer;
       }
-      animation: popModal;
-      animation-duration: 700ms;
     }
-    @keyframes popModal {
-      0% {
-        margin-top: 90%;
-      }
+    animation: popModal;
+    animation-duration: 700ms;
+  }
+  @keyframes popModal {
+    0% {
+      margin-top: 90%;
     }
   }
 }

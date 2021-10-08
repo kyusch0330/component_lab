@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./CookieModal.scss";
 import { setCookie, getCookie, delCookie } from "utils/cookie";
+import ModalPortal from "../ModalPortal/ModalPortal";
 const cookieModalKey = "showCookieModal";
 const CookieModal = () => {
   const [display, setDisplay] = useState(false);
@@ -19,7 +20,7 @@ const CookieModal = () => {
   return (
     <div className="cookieModalContainer">
       <button
-        className={`resetBtn${cookieExist ? " active" : ""}`}
+        className={`cookieModal_resetBtn${cookieExist ? " active" : ""}`}
         onClick={() => {
           if (!cookieExist) return;
           delCookie(cookieModalKey);
@@ -30,37 +31,42 @@ const CookieModal = () => {
         reset cookie
       </button>
       {display && (
-        <div className="modalOverlay" onClick={() => setDisplay(false)}>
+        <ModalPortal>
           <div
-            className="modal"
-            onClick={(e) => {
-              e.stopPropagation();
-            }}
+            className="cookieModal_overlay"
+            onClick={() => setDisplay(false)}
           >
-            <h5>Modal Message</h5>
-            <label>
-              <input
-                type="checkbox"
-                onChange={() => {
-                  setChecked((checked) => !checked);
-                }}
-              />
-              &nbsp;1분간 보지 않기
-            </label>
-            <button
-              className="closeBtn"
-              onClick={() => {
-                if (checked) {
-                  setCookie(cookieModalKey, "true", 1);
-                  setCookieExist(true);
-                }
-                setDisplay(false);
+            <div
+              className="cookieModal"
+              onClick={(e) => {
+                e.stopPropagation();
               }}
             >
-              Close
-            </button>
+              <h5>Modal Message</h5>
+              <label>
+                <input
+                  type="checkbox"
+                  onChange={() => {
+                    setChecked((checked) => !checked);
+                  }}
+                />
+                &nbsp;1분간 보지 않기
+              </label>
+              <button
+                className="cookieModal_closeBtn"
+                onClick={() => {
+                  if (checked) {
+                    setCookie(cookieModalKey, "true", 1);
+                    setCookieExist(true);
+                  }
+                  setDisplay(false);
+                }}
+              >
+                Close
+              </button>
+            </div>
           </div>
-        </div>
+        </ModalPortal>
       )}
     </div>
   );

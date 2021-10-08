@@ -1,28 +1,34 @@
 import React, { useState } from "react";
 import { ReactComponent as ModalImg } from "assets/modal.svg";
 import "./ToastModal.scss";
+import ModalPortal from "../ModalPortal/ModalPortal";
 const ToastModal = () => {
   const [display, setDisplay] = useState(false);
 
   return (
     <div className="toastModalContainer">
-      <button className="popBtn" onClick={() => setDisplay(true)}>
+      <button className="toastModal_popBtn" onClick={() => setDisplay(true)}>
         <ModalImg />
       </button>
       {display && (
-        <div className="modalOverlay" onClick={() => setDisplay(false)}>
-          <div
-            className="modal"
-            onClick={(e) => {
-              e.stopPropagation();
-            }}
-          >
-            <button className="closeBtn" onClick={() => setDisplay(false)}>
-              X
-            </button>
-            <h5>Modal Message</h5>
+        <ModalPortal>
+          <div className="toastModal_overlay" onClick={() => setDisplay(false)}>
+            <div
+              className="toastModal"
+              onClick={(e) => {
+                e.stopPropagation();
+              }}
+            >
+              <button
+                className="toastModal_closeBtn"
+                onClick={() => setDisplay(false)}
+              >
+                X
+              </button>
+              <h5>Modal Message</h5>
+            </div>
           </div>
-        </div>
+        </ModalPortal>
       )}
       <div className="contents">
         <h3>Content</h3>

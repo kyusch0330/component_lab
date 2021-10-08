@@ -10,7 +10,7 @@
 
   overflow-y: scroll;
 
-  .popBtn {
+  .toastModal_popBtn {
     position: fixed;
     bottom: 2em;
     right: 10%;
@@ -28,58 +28,6 @@
     }
   }
 
-  .modalOverlay {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: $blackTrans;
-    z-index: 2000;
-
-    .modal {
-      width: 90vw;
-      max-width: 18em;
-      height: 8em;
-      background: $white;
-      border-radius: 5px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      padding: 1em;
-      gap: 1em;
-
-      position: absolute;
-      bottom: 0;
-      .closeBtn {
-        position: absolute;
-        top: 0.5em;
-        right: 1em;
-        font-size: 0.9em;
-        padding: 0.5em;
-        border: transparent;
-        background: transparent;
-        border-radius: 5px;
-        color: $blackTrans;
-        &:hover {
-          cursor: pointer;
-        }
-      }
-      animation: popToastModal;
-      animation-duration: 700ms;
-    }
-    @keyframes popToastModal {
-      0% {
-        bottom: -10em;
-      }
-    }
-  }
-
   .contents {
     width: 90%;
     max-width: 30em;
@@ -87,5 +35,57 @@
 
     border-left: 1px solid $grayTrans;
     border-right: 1px solid $grayTrans;
+  }
+}
+
+.toastModal_overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $blackTrans;
+  z-index: 2000;
+
+  .toastModal {
+    width: 90vw;
+    max-width: 18em;
+    height: 8em;
+    background: $white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1em;
+    gap: 1em;
+
+    position: absolute;
+    bottom: 0;
+    .toastModal_closeBtn {
+      position: absolute;
+      top: 0.5em;
+      right: 1em;
+      font-size: 0.9em;
+      padding: 0.5em;
+      border: transparent;
+      background: transparent;
+      border-radius: 5px;
+      color: $blackTrans;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    animation: popToastModal;
+    animation-duration: 700ms;
+  }
+  @keyframes popToastModal {
+    0% {
+      bottom: -10em;
+    }
   }
 }
