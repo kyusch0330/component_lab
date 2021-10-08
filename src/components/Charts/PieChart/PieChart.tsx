@@ -38,6 +38,7 @@ const PieChart = () => {
   }, [dataList]);
 
   const isEmpty = dataList.every((data) => data.dataValue === 0);
+  const isPosEmpty = infoPos.every((pos) => pos[0] === 0 && pos[1] === 0);
   // console.log(dataList);
   useEffect(() => {
     if (isEmpty) return;
@@ -73,7 +74,7 @@ const PieChart = () => {
           }}
         >
           <>
-            {!isEmpty &&
+            {!isPosEmpty &&
               dataList.map((data, index) => {
                 return (
                   <div
