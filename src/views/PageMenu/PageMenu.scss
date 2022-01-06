@@ -57,9 +57,12 @@
       text-decoration: none;
       text-align: center;
       color: $black;
-
+      transition: background 500ms 100ms;
       &.selected {
         // background: $grayLight;
+      }
+      &:hover {
+        background: $grayLight;
       }
     }
   }

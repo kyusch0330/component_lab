@@ -22,17 +22,32 @@
       background: $white;
       display: flex;
       justify-content: flex-start;
-      .dataValue {
-        flex: 1;
+
+      .dataName {
+        flex: 1.5;
         text-align: center;
       }
+
       .chart {
         flex: 9;
+        position: relative;
         .bar {
           transition: width 500ms;
           height: 100%;
           background: $blue;
           border-radius: 0 5px 5px 0;
+        }
+        .dataValue {
+          position: absolute;
+          bottom: 10%;
+          font-size: 0.8rem;
+          font-weight: bold;
+          color: $white;
+          background: $black;
+          z-index: 100;
+          border-radius: 0.2rem;
+          padding: 0.1rem;
+          transition: left 700ms 100ms;
         }
       }
     }

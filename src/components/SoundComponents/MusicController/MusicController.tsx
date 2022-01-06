@@ -39,6 +39,11 @@ const MusicController = () => {
   useEffect(() => {
     if (playing) {
       currentMusic.audio.play();
+    } else {
+      console.log("1", currentMusic.audio.currentTime);
+      currentMusic.audio.pause();
+      console.log("2", currentMusic.audio.currentTime);
+      return;
     }
     const timeFlow = playing
       ? setInterval(() => {
@@ -47,7 +52,6 @@ const MusicController = () => {
         }, 1000)
       : null;
     return () => {
-      currentMusic.audio.pause();
       if (timeFlow) clearInterval(timeFlow);
     };
   }, [currentMusic, playing]);

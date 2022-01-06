@@ -14,14 +14,21 @@ const BarChart = () => {
     <div className="barChartContainer">
       <DataGenerator dataList={dataList} setDataList={setDataList} />
       <div className="chartContainer">
-        {dataList.map((data) => (
+        {dataList.map((data, index) => (
           <div className="chartBox">
-            <span className="dataValue">{data.dataValue}</span>
+            <span className="dataName">{"data" + data.dataName}</span>
             <div className="chart">
               <div
                 className="bar"
                 style={{ width: `${data.dataValue}%` }}
               ></div>
+              <span
+                className="dataValue"
+                style={{ left: `${data.dataValue + 1}%` }}
+              >
+                {" "}
+                {data.dataValue}
+              </span>
             </div>
           </div>
         ))}
