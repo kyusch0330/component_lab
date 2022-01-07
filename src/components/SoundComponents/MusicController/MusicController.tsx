@@ -145,6 +145,7 @@ const MusicController = () => {
             if (timePoint < 0 || timePoint > currentMusic.audio.duration)
               return;
             currentMusic.audio.currentTime = timePoint;
+            setTimeForSkip(timePoint);
             setTime(timePoint);
           }}
         >
