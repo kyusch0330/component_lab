@@ -52,17 +52,18 @@
       padding: 0.6em;
       width: 6.25em;
       height: 3em;
-      border: 1px solid $grayLight;
-      border-radius: 5px;
+      // border: 1px solid $grayLight;
+      // border-radius: 5px;
       text-decoration: none;
       text-align: center;
-      color: $black;
+      color: $gray;
       transition: background 500ms 100ms;
       &.selected {
-        // background: $grayLight;
+        color: $black;
+        border-bottom: 0.2rem solid $black;
       }
       &:hover {
-        background: $grayLight;
+        color: $blackTrans;
       }
     }
   }
